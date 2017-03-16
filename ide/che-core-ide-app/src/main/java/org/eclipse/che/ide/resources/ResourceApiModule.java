@@ -20,6 +20,8 @@ import org.eclipse.che.ide.api.component.WsAgentComponent;
 import org.eclipse.che.ide.api.data.tree.NodeInterceptor;
 import org.eclipse.che.ide.api.data.tree.settings.SettingsProvider;
 import org.eclipse.che.ide.api.data.tree.settings.impl.DummySettingsProvider;
+import org.eclipse.che.ide.api.resources.RenamingSupport;
+import org.eclipse.che.ide.api.resources.Resource;
 import org.eclipse.che.ide.api.resources.ResourceInterceptor;
 import org.eclipse.che.ide.api.resources.modification.ClipboardManager;
 import org.eclipse.che.ide.context.AppContextImpl;
@@ -63,5 +65,14 @@ public class ResourceApiModule extends AbstractGinModule {
         bind(ResourceManagerInitializer.class).to(AppContextImpl.class).in(Singleton.class);
         GinMapBinder<String, WsAgentComponent> mapBinder = GinMapBinder.newMapBinder(binder(), String.class, WsAgentComponent.class);
         mapBinder.addBinding("Resource Manager").to(ResourceManagerComponent.class);
+        GinMultibinder.newSetBinder(binder(), RenamingSupport.class).addBinding().to(NopsSourceRenameValidator.class);
+    }
+
+    public static class NopsSourceRenameValidator implements RenamingSupport{
+
+        @Override
+        public boolean isRenameAllowed(Resource resource) {
+            return true;
+        }
     }
 }

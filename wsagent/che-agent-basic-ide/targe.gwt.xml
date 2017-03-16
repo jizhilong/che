@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='_app'>
+    <inherits name="org.eclipse.che.api.auth.Auth"/>
+    <inherits name="org.eclipse.che.api.core.Core"/>
+    <inherits name="org.eclipse.che.api.core.model.Model"/>
+    <inherits name="org.eclipse.che.api.debug.Debug"/>
+    <inherits name="org.eclipse.che.api.factory.Factory"/>
+    <inherits name="org.eclipse.che.api.git.Git"/>
+    <inherits name="org.eclipse.che.api.languageserver.LanguageServer"/>
+    <inherits name="org.eclipse.che.api.machine.Machine"/>
+    <inherits name="org.eclipse.che.api.project.Project"/>
+    <inherits name="org.eclipse.che.api.promises.Promises"/>
+    <inherits name="org.eclipse.che.api.ssh.Ssh"/>
+    <inherits name="org.eclipse.che.api.testing.Testing"/>
+    <inherits name="org.eclipse.che.api.user.User"/>
+    <inherits name="org.eclipse.che.api.workspace.Workspace"/>
+    <inherits name="org.eclipse.che.env.local.LocalEnvironment"/> ?
+    <inherits name="org.eclipse.che.ide.Api"/>
+    <inherits name="org.eclipse.che.ide.Commons"/>
+    <inherits name="org.eclipse.che.ide.Core"/>
+    <inherits name="org.eclipse.che.ide.Util"/>
+    <inherits name="org.eclipse.che.ide.collections.Collections"/>
+    <inherits name="org.eclipse.che.ide.dto.DtoGen"/>
+    <inherits name="org.eclipse.che.ide.editor.orion.OrionEditor"/>
+    <inherits name="org.eclipse.che.ide.ext.dashboard.Dashboard"/>
+    <inherits name="org.eclipse.che.ide.useragents"/>
+    <inherits name="org.eclipse.che.orion.CheOrion"/>
+    <inherits name="org.eclipse.che.providers.Providers"/>
+    <inherits name="org.eclipse.che.security.OAuth"/>
+    <inherits name="org.eclipse.che.security.oauth.OAuth2"/>
+    <inherits name="org.vectomatic.libgwtsvg"/>
+   <stylesheet src="IDE.css"/>
+   <entry-point class="org.eclipse.che.ide.client.IDE"/>
+</module>
